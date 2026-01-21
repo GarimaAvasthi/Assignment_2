@@ -1,0 +1,199 @@
+:root {
+  --bg: #0f172a;            /* dark slate background */
+  --panel: #020617;         /* darker header / base */
+  --card-bg: #111827;       /* card background */
+  --border: #1f2937;
+
+  --primary: #38bdf8;       /* cyan-blue accent */
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* Header */
+.header {
+  background: var(--panel);
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 26px;
+}
+
+.header p {
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.card-value {
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Currency Switch */
+.currency-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.currency-switch label {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.currency-switch select {
+  background: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* Inputs */
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-main);
+}
+
+input::placeholder {
+  color: var(--text-sub);
+}
+
+button {
+  padding: 12px 16px;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Expense List */
+.expense-list-section,
+.chart-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.expense-list-section h2,
+.chart-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.chart-wrapper {
+  max-width: 280px;      
+  margin: 0 auto;       
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.delete {
+  color: var(--danger);
+  cursor: pointer;
+}
+
+/* Footer Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Balance emphasis */
+#balanceDisplay {
+  font-weight: 700;
+}

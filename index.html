@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cash-Flow Tracker</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<main class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Cash-Flow Summary</h1>
+    <p>Track your salary, expenses, and balance</p>
+  </header>
+
+  <!-- Summary Cards -->
+  <section class="summary-cards">
+
+    <div class="card card-with-control">
+      <div class="card-header">
+        <span class="card-title">Salary</span>
+        <div class="currency-switch">
+          <label for="currencySelect">Currency</label>
+          <select id="currencySelect">
+            <option value="INR">INR (₹)</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card-value" id="salaryDisplay">₹0</div>
+    </div>
+
+    <div class="card">
+      <span class="card-title">Total Expenses</span>
+      <div class="card-value" id="expenseTotal">₹0</div>
+    </div>
+
+    <div class="card">
+      <span class="card-title">Remaining</span>
+      <div class="card-value" id="balanceDisplay">₹0</div>
+    </div>
+
+  </section>
+
+  <!-- Inputs -->
+  <section class="input-section">
+    <div class="input-group">
+      <input type="number" id="salaryInput" placeholder="Enter Salary" />
+      <button id="setSalaryBtn">Set Salary</button>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="expenseName" placeholder="Expense Name" />
+      <input type="number" id="expenseAmount" placeholder="Expense Amount" />
+      <button id="addExpenseBtn">Add Expense</button>
+    </div>
+  </section>
+
+  <!-- Expense List -->
+  <section class="expense-list-section">
+    <h2>Expenses</h2>
+    <ul id="expenseList"></ul>
+  </section>
+
+  <!-- Chart -->
+  <section class="chart-section">
+  <h2>Breakdown</h2>
+
+  <!-- ✅ Controlled chart container -->
+  <div class="chart-wrapper">
+    <canvas id="expenseChart"></canvas>
+  </div>
+</section>
+
+
+  <!-- Actions -->
+  <section class="actions">
+    <button id="downloadPdfBtn">Download Report</button>
+    <button class="danger" id="clearBtn">Reset All</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
